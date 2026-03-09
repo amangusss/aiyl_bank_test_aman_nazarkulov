@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: aiyl_bank_test_aman_nazarkulov
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/aiyl_bank
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.github.amangusss.aiyl_bank_test_aman_nazarkulov: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
